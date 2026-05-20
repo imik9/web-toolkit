@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Toolkit</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Browser utilities</p>
+        <h1>Web Toolkit</h1>
+      </div>
+      <div class="status-bar" aria-live="polite">
+        <span id="statusText">Ready</span>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="tool-panel" aria-label="Tool controls">
+        <section class="panel-section">
+          <h2>Magnifier</h2>
+          <label class="switch-row">
+            <span>Enable lens</span>
+            <input id="magnifierToggle" type="checkbox">
+          </label>
+          <label class="range-row">
+            <span>Zoom</span>
+            <input id="zoomRange" type="range" min="1.5" max="3.5" step="0.25" value="2.25">
+            <output id="zoomValue">2.25x</output>
+          </label>
+        </section>
+
+        <section class="panel-section">
+          <h2>Video speed</h2>
+          <label class="range-row">
+            <span>Speed</span>
+            <input id="speedRange" type="range" min="0.25" max="2" step="0.25" value="1">
+            <output id="speedValue">1.00x</output>
+          </label>
+          <div class="button-grid">
+            <button class="tool-button" data-speed="0.5">0.5x</button>
+            <button class="tool-button" data-speed="1">1x</button>
+            <button class="tool-button" data-speed="1.5">1.5x</button>
+            <button class="tool-button" data-speed="2">2x</button>
+          </div>
+        </section>
+
+        <section class="panel-section">
+          <h2>Reading</h2>
+          <label class="switch-row">
+            <span>Reading mode</span>
+            <input id="readingToggle" type="checkbox">
+          </label>
+          <label class="switch-row">
+            <span>High contrast</span>
+            <input id="contrastToggle" type="checkbox">
+          </label>
+        </section>
+
+        <section class="panel-section">
+          <h2>Inspect</h2>
+          <label class="switch-row">
+            <span>Ruler</span>
+            <input id="rulerToggle" type="checkbox">
+          </label>
+          <button id="colorButton" class="wide-button" type="button">Pick color</button>
+          <div class="color-readout">
+            <span id="colorSwatch" aria-hidden="true"></span>
+            <span id="colorValue">No color selected</span>
+          </div>
+        </section>
+      </aside>
+
+      <section id="previewArea" class="preview-area" aria-label="Preview area">
+        <div class="hero-band">
+          <div>
+            <p class="eyebrow">Live playground</p>
+            <h2>Test accessibility and inspection tools on one page.</h2>
+          </div>
+          <button id="resetButton" class="reset-button" type="button">Reset tools</button>
+        </div>
+
+        <div class="content-grid">
+          <article class="sample-article">
+            <h3>Readable Content Sample</h3>
+            <p>
+              Web Toolkit helps you experiment with small browser utilities before turning them into a browser extension.
+              The reading controls change this article in real time so typography, spacing, and contrast can be tested quickly.
+            </p>
+            <p>
+              Use the magnifier over this text, enable the ruler to measure layout spacing, or use the color picker to capture a tone from the interface.
+            </p>
+          </article>
+
+          <section class="video-card" aria-label="Video speed sample">
+            <h3>Speed Control Sample</h3>
+            <video id="sampleVideo" controls loop muted poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 540'%3E%3Crect width='960' height='540' fill='%2314222b'/%3E%3Ccircle cx='250' cy='270' r='130' fill='%2337c5b4'/%3E%3Crect x='440' y='170' width='310' height='200' rx='22' fill='%23f5b84b'/%3E%3Cpath d='M565 220l120 70-120 70z' fill='%2314222b'/%3E%3C/svg%3E">
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+          </section>
+
+          <section class="metric-strip" aria-label="Tool state">
+            <div>
+              <strong id="activeTools">0</strong>
+              <span>active tools</span>
+            </div>
+            <div>
+              <strong id="speedMetric">1.00x</strong>
+              <span>video speed</span>
+            </div>
+            <div>
+              <strong id="zoomMetric">2.25x</strong>
+              <span>lens zoom</span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <div id="magnifier" class="magnifier" aria-hidden="true"></div>
+    <div id="ruler" class="ruler" aria-hidden="true">
+      <span></span>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
