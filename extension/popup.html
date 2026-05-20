@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Toolkit</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header>
+      <p>Browser utilities</p>
+      <h1>Web Toolkit</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>View</h2>
+        <button data-toggle="magnifier" type="button">
+          <span>Magnifier</span>
+          <strong id="magnifierState">Off</strong>
+        </button>
+        <label>
+          <span>Lens zoom</span>
+          <input id="zoomRange" type="range" min="1.5" max="3.5" step="0.25" value="2.25">
+          <output id="zoomValue">2.25x</output>
+        </label>
+      </section>
+
+      <section>
+        <h2>Video</h2>
+        <label>
+          <span>Speed</span>
+          <input id="speedRange" type="range" min="0.25" max="2.5" step="0.25" value="1">
+          <output id="speedValue">1.00x</output>
+        </label>
+        <div class="quick-speeds">
+          <button data-speed="0.5" type="button">0.5x</button>
+          <button data-speed="1" type="button">1x</button>
+          <button data-speed="1.5" type="button">1.5x</button>
+          <button data-speed="2" type="button">2x</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Reading</h2>
+        <button data-toggle="reading" type="button">
+          <span>Reading mode</span>
+          <strong id="readingState">Off</strong>
+        </button>
+        <button data-toggle="contrast" type="button">
+          <span>High contrast</span>
+          <strong id="contrastState">Off</strong>
+        </button>
+        <button data-toggle="night" type="button">
+          <span>Night tone</span>
+          <strong id="nightState">Off</strong>
+        </button>
+        <button data-toggle="readingLine" type="button">
+          <span>Reading line</span>
+          <strong id="readingLineState">Off</strong>
+        </button>
+      </section>
+
+      <section>
+        <h2>Inspect</h2>
+        <button data-toggle="ruler" type="button">
+          <span>Ruler</span>
+          <strong id="rulerState">Off</strong>
+        </button>
+        <button data-toggle="links" type="button">
+          <span>Highlight links</span>
+          <strong id="linksState">Off</strong>
+        </button>
+        <button data-toggle="hideImages" type="button">
+          <span>Hide images</span>
+          <strong id="hideImagesState">Off</strong>
+        </button>
+        <button id="pickColor" type="button">
+          <span>Pick color</span>
+          <strong id="colorValue">None</strong>
+        </button>
+        <button id="scrollTop" type="button">
+          <span>Scroll to top</span>
+          <strong>Run</strong>
+        </button>
+      </section>
+
+      <button id="resetButton" class="reset" type="button">Reset current tab</button>
+      <p id="status" role="status">Ready</p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

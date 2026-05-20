@@ -10,6 +10,21 @@ A lightweight collection of browser utilities for zooming, reading, video speed 
 - High contrast mode for accessibility checks.
 - On-screen ruler for quick visual measurements.
 - Color picker that reads the color under the cursor when supported by the browser.
+- Link highlighting, image hiding, night tone, reading line, and scroll-to-top controls in the extension.
+
+## Browser extension
+
+The `extension/` folder contains a Chrome and Edge extension version of Web Toolkit.
+
+To test it locally:
+
+1. Open `chrome://extensions` or `edge://extensions`.
+2. Enable Developer mode.
+3. Choose Load unpacked.
+4. Select the `extension/` folder from this repository.
+5. Open any website and click the Web Toolkit extension button.
+
+The extension can toggle the magnifier, reading mode, high contrast mode, night tone, reading line, link highlighting, image hiding, ruler, color picker, scroll-to-top, and video speed controls on the current tab.
 
 ## Run locally
 
